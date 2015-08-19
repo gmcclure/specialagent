@@ -23,7 +23,7 @@ USE_I18N = False
 USE_L10N = False
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '%1$y03-d&yw2_8$!#^tr+)f14xfjeicd6j_=i64%lf#hw$2$&h'
+SECRET_KEY = ''
 
 DATABASES = {
     'default': {
@@ -167,14 +167,14 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-TWITTER_CONSUMER_KEY              = 'AHT4luvVfbLkqkC2P8e4w'
-TWITTER_CONSUMER_SECRET           = 'ubzH5btN9pd1PaVrZR0V20sCjRwCGMMw0EjTt9rVIQ'
-FACEBOOK_APP_ID                   = '191868910855038'
-FACEBOOK_API_SECRET               = '58b2973e552ee37a51cb36a0cb237892'
-LINKEDIN_CONSUMER_KEY             = 'TGv-F4flK9NHDfvRe6-X_ElJV_4dkFRpQ9H7Jse7lz8B21z4In6B6MBZxgtu-gCC'
-LINKEDIN_CONSUMER_SECRET          = 'PSb8-RjpeXeNZ43sM9P0o8PeSLVBUb74TQo3Ks9VX5So0yDwRuBKaxmmja_jrzYX'
-GOOGLE_CONSUMER_KEY               = 'www.specialagent.me'
-GOOGLE_CONSUMER_SECRET            = 'RrlWM3tY60DHOFA62awEMSAd'
+TWITTER_CONSUMER_KEY              = ''
+TWITTER_CONSUMER_SECRET           = ''
+FACEBOOK_APP_ID                   = ''
+FACEBOOK_API_SECRET               = ''
+LINKEDIN_CONSUMER_KEY             = ''
+LINKEDIN_CONSUMER_SECRET          = ''
+GOOGLE_CONSUMER_KEY               = ''
+GOOGLE_CONSUMER_SECRET            = ''
 
 LOGIN_URL                         = '/login/'
 LOGIN_REDIRECT_URL                = '/'
@@ -190,8 +190,8 @@ SOCIAL_AUTH_EXPIRATION            = 'expires'
 AUTH_PROFILE_MODULE               = 'precis.UserProfile'
 
 # AWS config
-AWS_ACCESS_KEY_ID                 = 'AKIAJPB2VOJNPO4R7TUQ'
-AWS_SECRET_ACCESS_KEY             = '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'
+AWS_ACCESS_KEY_ID                 = ''
+AWS_SECRET_ACCESS_KEY             = ''
 AWS_STORAGE_BUCKET_NAME           = 'specialagent'
 
 # Easy-thumbnails config
