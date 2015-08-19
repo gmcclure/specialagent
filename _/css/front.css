@@ -1,0 +1,38 @@
+/* -- 1. Page Elements -- */
+body { background: white; }
+h1 { margin: 0.5em 0 1em 0; }
+
+#content header { display: inline-block; }
+#headline { display: inline; }
+#story { display: block; min-height: 150px; width: 500px; }
+#story p { margin-top: 0.5em; }
+#story_text { height: 100px; width: 370px; }
+.menu_sep { color: white; margin: 0 4px 0 4px; }
+section#home, section#signup { padding: 1em; }
+section#linkbox { display: hidden; width: 150px; }
+#contact_form { display: none; }
+
+.ui-tabs .ui-tabs-nav { background: #aaa !important; }
+
+/* -- 2. Topbar -- */
+#topbar { color: white; margin: 0; padding: 0; position: relative; vertical-align: middle; width: 100%; }
+#topbar { font-family: Corbel, "Lucida Sans Unicode", "Lucida Grade", "Bitstream Vera Sans", "Luxi Serif", Verdana, sans-serif; font-size: 1em; }
+#topbar ul { margin-right: 0.4em; text-align: right; }
+#topbar ul li { background: #333; display: inline; list-style: none; opacity: 0.8; margin: 0; padding: 0.5em 0.5em 0 0.1em; }
+#topbar ul li a { color: white; text-decoration: underline; vertical-align: top; }
+#topbar .icon { margin: 0 6px; }
+
+/* -- 3. Control Panel -- */
+#controlpanel { background: #aaa; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#controlpanel { bottom: 20px; height: 420px; padding: 1em; position: absolute; right: 20px; width: 400px; }
+#controlpanel h1 { display: inline; }
+#controlpanel button#cp_save { background: #e9967a; margin-left: 10px; }
+#controlpanel #cp_tabs { margin-top: 10px; }
+#controlpanel select { background: transparent; border: 1px solid #ccc; }
+#controlpanel button { background: transparent; border: 1px solid #ccc; }
+#controlpanel input { background: transparent; border: 1px solid #ccc; font-size: 13px; }
+#controlpanel textarea { background: transparent; border: 1px solid #ccc; width: 270px; }
+#controlpanel textarea#story_text { font: 13px Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif; }
+#controlpanel p { margin: 8px 0; }
+#controlpanel label { font-weight: bold; }
+#controlpanel #text_controls { height: 325px; }

@@ -1,0 +1,16 @@
+{% extends 'fence.html' %}
+{% block content %}
+				<!-- email subscription start -->
+				<h4 id="emailstatus">Give us your email and stay tuned</h4>
+                <form id="emailform" action="#" method="post">
+                    {% csrf_token %}
+					<div id="emailfield">
+						<input type="email" name="email" id="id_email" value="">
+					</div><!-- end div #emailfield -->
+					<div id="submitfield">
+						<input type="submit" id="submitbutton" value="Submit" >
+					</div><!-- end div #submitfield -->
+				</form>
+                <span id="invitation_feedback"></span>
+				<!-- email subscription end -->
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'frontend.html' %}
+{% load url from future %}
+{% block content %}
+    <div class="container_gamma breadcrumbs">
+        <p><span>&raquo;</span><a href="index.html">Home</a><span>&raquo;</span><a href="#">Login</a></p>
+    </div>
+    <div class="container_omega">
+        <div class="gs_5">
+        <h2>Sign Up!</h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><p class="error">{{ message|safe }}</p></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <p class="information">Use the form below if you&apos;d rather not use one of your existing social media accounts, or if you&apos;d simply prefer a traditional username and password.</p>
+            <form method="post" action="{% url 'hq.views.signup' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <p>
+                {% if form.email.errors %}{{ form.email.errors }}<br />{% endif %}
+                {{ form.email.label_tag }}<br />
+                {{ form.email }}
+            </p>
+            <p>
+                {% if form.email2.errors %}{{ form.email2.errors }}<br />{% endif %}
+                {{ form.email2.label_tag }}<br />
+                {{ form.email2 }}
+            </p>
+            <p>
+                {% if form.password.errors %}{{ form.password.errors }} <br />{% endif %}
+                {{ form.password.label_tag }}<br />
+                {{ form.password }}
+            </p>
+            <p>
+                {% if form.password2.errors %}{{ form.password2.errors }} <br />{% endif %}
+                {{ form.password2.label_tag }}<br />
+                {{ form.password2 }}
+            </p>
+
+            <input type="submit" name="submit" id="submit" value="Create Account" class="superbutton ocean" />
+            </form>
+        </div>
+        <div style="text-align: center" class="gs_1"><p style="font-size: 24px; font-style: italic; margin-top: 88px">or</p></div>
+        <div class="gs_6 omega">
+        <h2>Just Be Social</h2>
+        <p class="information">Simply log in with your existing Google, Facebook, Twitter, or LinkedIn account by clicking on an icon below. Sign in, if necessary, and you&apos;re done!.</p>
+        <p>
+            <a href="/login/google-oauth/"><img src="/_/images/frontend/icons/google.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/facebook/"><img src="/_/images/frontend/icons/facebook.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/twitter/"><img src="/_/images/frontend/icons/twitter.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/linkedin/"><img src="/_/images/frontend/icons/linkedin.png" width="64" height="64" border="0" /></a>
+        </p>
+        </div>
+    </div>
+{% endblock %}

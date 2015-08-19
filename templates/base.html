@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SpecialAgent.me</title>
+	    <meta name="google-site-verification" content="cFFJmuqcJR4WKD5dvNzPXK6ZTiEKxpOPbbC1EDw93pk" />
+
+        <link rel="stylesheet" type="text/css" href="/_/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/_/css/Aristo/jquery-ui-1.8.7.custom.css" />
+        <link rel="stylesheet" type="text/css" href="/_/css/main.css" />
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+        {% block assets_extra %}{% endblock %}
+	</head>
+    <body> 
+
+        {% block topbar %}{% endblock %}
+
+        <section id="content">
+            {% block content %}{% endblock %}
+        </section>
+    </body>
+</html>

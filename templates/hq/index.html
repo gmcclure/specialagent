@@ -1,0 +1,36 @@
+{% extends 'frontend.html' %}
+{% block content %}
+    <div class="container_alpha">
+        <h1><img src="/_/images/frontend/assets/screen.png" alt="" class="alignright" />Welcome to <strong>SpecialAgent.me.</strong></h1>
+        <p>The Real Estate Agent Identity Management Solution</p>
+        <p><span class="dropcapcolor">S</span>ales is about targeted &amp; effective communication &mdash; and where communication is concerned, today&apos;s real estate agent is working in an evolving environment. Agents need solutions geared especially for their needs and that provide a one-stop interface for the various Web and social media alternatives. This is where SpecialAgent.me comes in. We&apos;re leveraging years of Web-design experience and we&apos;re working with leaders in the industry in order to design a product that caters to the particular technological needs of today&apos;s real estate professional.</p>
+        <p><a href="/features/" class="superbutton">What Is Real Estate Agent Identity Management?</a><a href="/signup/" class="superbutton red">Sign Up</a>{% if not user.is_authenticated %}<a href="/login/" class="superbutton ocean">Login</a>{% endif %}</p>
+    </div>
+    
+    <div class="container_gamma slogan">
+    <img src="/_/images/frontend/buttons/info_button.png" class="alignright" alt="" /><h1>We offer a one-stop online solution designed <strong>especially for busy real estate agents</strong> who need <strong>power</strong>, <strong>flexibility</strong>, and <strong>control</strong>.</h1>
+    </div>
+    
+    <div class="container_omega">
+        <div class="gs_3">
+            <h3 class="widgettitle">Complete Control</h3>
+            <p><img src="/_/images/frontend/icons/mouse.png" alt="" class="alignleft icon" />You&apos;re in complete control of your site&apos;s appearance and content. Your brand&apos;s message is determined entirely by how you choose to express yourself. You decide what&apos;s important for your site.</p>
+            <p><a href="#" class="superbutton">+ Read more..</a></p>
+        </div>
+        <div class="gs_3">
+            <h3 class="widgettitle">Social Media</h3>
+            <p><img src="/_/images/frontend/icons/pie.png" alt="" class="alignleft icon" />Control your social media status updates &mdash; Facebook, Twitter, &amp; LinkedIn &mdash; entirely from SpecialAgent.me. Once your social media sites are easily configured, you can update all or some in one step.</p>
+            <p><a href="#" class="superbutton">+ Read more..</a></p>
+        </div>
+        <div class="gs_3">
+            <h3 class="widgettitle">Targeted Messages</h3>
+            <p><img src="/_/images/frontend/icons/newspaper.png" alt="" class="alignleft icon" />No one knows your clients, in person or online, better than you do. Using SpecialAgent&apos;s tools, you can display the content and images you know will have the greatest impact, changing them whenever you need to.</p>
+            <p><a href="#" class="superbutton">+ Read more..</a></p>
+        </div>
+        <div class="gs_3 omega">
+            <h3 class="widgettitle">Beautiful Timesaver</h3>
+            <p><img src="/_/images/frontend/icons/clock.png" alt="" class="alignleft icon" />Now you don&apos;t have to rely on Web designers or difficult-to-reach staff members in order to put up timely content. Our site editor makes it trivial for you to put up site updates quickly and effortlessly.</p>
+            <p><a href="#" class="superbutton">+ Read more..</a></p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "frontbase.html" %}
+{% load thumbnail %}
+
+{% block assets_extra %}
+    <script type="text/javascript" src="/_/js/underscore.js"></script>
+    <script type="text/javascript" src="/_/js/backbone.js"></script>
+    <script type="text/javascript" src="/_/js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/_/js/minicolors/jquery.miniColors.css" />
+    <script type="text/javascript" src="/_/js/minicolors/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="/_/js/jquery.backstretch.min.js"></script>
+	<script type="text/javascript" src="/_/js/showdown.js"></script>
+{% endblock %}
+
+{% block content %}
+<header id="headline"></header>
+<header id="status"></header>
+<section id="story"></section>
+<section id="linkbox"></section>
+
+
+<div id="contact_form">
+    <form id="contact" action="#" method="post">
+        <div id="form_inputs">
+            {{ contact_agent_form.as_p }}
+        </div>
+        <input type="submit" value="Send Message to Agent" />
+    </form>
+</div>
+<input id="profile_id" type="hidden" value="{{ profile_id }}" />
+{% endblock %}

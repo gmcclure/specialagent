@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block topbar %}
+        <li>Welcome!</li> <span class="menu_sep">|</span>
+        {% if user.is_authenticated %}
+        <li>User: {{ user.username }}</li> <span class="menu_sep">|</span>
+            {% if user.is_subscribed %}
+            <li><a href="/subscriptions/manage/">Your Subscription</a></li> <span class="menu_sep">|</span>
+            {% else %}
+            <li><a href="/subscriptions/signup/">Subscribe</a></li> <span class="menu_sep">|</span>
+            {% endif %}
+        <li><a href="/logout/">Logout</a></li>
+        {% else %}
+        <li>Please log in <a id="google_login" href="/login/google-oauth/">via Google</a>.</li>
+        {% endif %}
+{% endblock %}
+
+{% block content %}
+<section id="home">
+
+<p>Welcome to SpecialAgent.me.</p>
+
+</section>
+{% endblock %}

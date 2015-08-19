@@ -1,0 +1,28 @@
+{% extends 'frontend.html' %}
+{% block content %}
+    <div class="container_gamma breadcrumbs">
+        <p><span>&raquo;</span><a href="index.html">Home</a><span>&raquo;</span><a href="#">Contact</a></p>
+    </div>
+    <div class="container_omega">
+        <div class="hr"></div>
+        <div class="gs_3"><h3>Get in touch</h3>
+        <p><strong>support:</strong> <a href="mailto:support@specialagent.me">support@specialagent.me</a><br /></p></div>
+        <div class="gs_9 omega"><h3>Contact Form</h3>
+        <!-- Contact form starts -->
+            <form method="post" action="sendEmail.php">
+                <div id="form_container">		
+                    <div id="form_main">
+                        <input type="text" name="name" id="name" value="Name" title="Name"/>
+                        <input type="text" name="email" id="email" value="Email" title="Email"/>
+                        <textarea name="comments" id="comments" rows="4" cols="4" value="Message" placeholder="Message"></textarea>
+                        <p><input type="button" name="submit" id="submit" value="Send It!" class="superbutton" /></p>
+                        <ul id="form_response"><li></li></ul>
+                    </div>
+                </div>
+            </form>
+        <!-- Contact form Ends -->
+        </div>
+        <div class="clearfix"></div>
+        <div class="hr"></div>
+    </div>
+{% endblock %}

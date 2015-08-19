@@ -1,0 +1,30 @@
+New User Flow:
+
+1. New user comes to site's home page.
+2. They must sign up for a subscription.
+3. They go to '/subscriptions/signup/'.
+4. They click on the PayPal Subscriptions button.
+5. They go through the PayPal process.
+
+
+- cancellation page
+www.specialagent.me/cancel_subscription
+
+
+- subscription success
+www.specialagent.me/welcome_subscriber
+
+
+- subscribe button
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="XF7ZL82VBLMXQ">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+- unsubscribe button
+<A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=YCYPPZCT7WJH4">
+<IMG SRC="https://www.paypalobjects.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
+</A>

@@ -1,0 +1,48 @@
+{% extends 'frontend.html' %}
+{% block assets_extra %}
+    <script type="text/javascript" src="/_/js/typewatch.js"></script>
+    <script type="text/javascript" src="/_/js/headquarters.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="container_gamma breadcrumbs">
+        <p><span>&raquo;</span><a href="index.html">Home</a><span>&raquo;</span><a href="#">Headquarters</a></p>
+    </div>
+    <div class="container_omega">
+        <div class="gs_6">
+            <h2>Welcome Home, Agent.</h2>
+
+            <a class="superbutton ocean" href="/id/{{ request.user.id }}" style="margin-bottom: 20px;">Go Back To Editor</a>
+
+            <hr style="clear: both; margin: 20px 0;" />
+
+            <h4>Page URL</h4>
+
+            {% if page.slug %}
+            <p>Your main page is available at <a href="{% url precis.views.front page.slug %}"><code>{% url precis.views.front page.slug %}</code></a></p>
+            {% else %}
+            <p class="information" style="clear: both;">
+                Choose your URL carefully! Once you&apos;ve selected it, you'll have to contact
+                us if you want to change it. So choose a sequence of letters, numbers, underscores,
+                or hyphens that&apos;s memorable and useful for your personal brand.
+            </p>
+
+            <div id="slug_form" style="clear: both;">
+            <form action="/hq/" method="post">
+                {% csrf_token %}
+                {{ slug_form.non_field_errors }}
+                <p>
+                    {{ slug_form.slug.errors }}
+                    {{ slug_form.slug.label }}<br />
+                    {{ slug_form.slug }}<br/>
+                    <span id="availability_message"></span>
+                </p>
+                <input type="submit" name="submit" id="submit" value="Assign URL" class="superbutton ocean" />
+            </form>
+            </div>
+            {% endif %}
+
+        </div>
+        <div class="gs_6 omega">
+        </div>
+    </div>
+{% endblock %}

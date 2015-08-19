@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block assets_extra %}
+    <script type="text/javascript" src="/_/js/underscore.js"></script>
+    <script type="text/javascript" src="/_/js/backbone.js"></script>
+    <script type="text/javascript" src="/_/js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/_/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/_/js/minicolors/jquery.miniColors.css" />
+    <script type="text/javascript" src="/_/js/minicolors/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="/_/js/jquery.backstretch.min.js"></script>
+	<script type="text/javascript" src="/_/js/showdown.js"></script>
+{% endblock %}
+
+{% block topbar %}
+    {% if user.is_authenticated %}
+        <div id="topbar">
+            <ul>
+                <li><img src="/_/images/icons/home.png" class="icon" width="16" height="16" /><a href="/hq/">Headquarters</a></li>&nbsp;
+                <li><img src="/_/images/icons/config.png" class="icon" width="16" height="16" /><a id="cp_toggle" href="#">Control Panel</a></li>&nbsp;
+                <li><img src="/_/images/icons/sign-out.png" class="icon" width="16" height="16" /><a href="/logout/">Logout</a></li>
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<div id="headline"><div class="draghandle ui-widget-header"></div></div>
+<div id="status"></div>
+<div id="story"></div>
+<div id="linkbox"></div>
+
+<div id="controlpanel">
+    <h1>Control Panel</h1>
+    <button id="cp_save">Save Changes</button>
+    <input id="profile_id" type="hidden" value="{{ profile_id }}" />
+    <input id="upload_bucket" type="hidden" value="{{ upload_bucket }}" />
+    <div id="cp_tabs">
+        <ul>
+            <li><a href="#tabs-1">Text</a></li>
+            <li><a href="#tabs-2">Background</a></li>
+            <li><a href="#tabs-3">Elements</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div id="text_controls">
+                <!--headline options-->
+                <h3><a href="#">Headline Options</a></h3>
+                <div>
+                    <label for="text">Headline</label><br />
+                    <input id="headline_text" type="text" size="30" value="This is your page." /><br/>
+
+                    <div style="margin: 10px 0;">
+                        <label for="hidden">Color</label>
+                        <input id="headline_color_button" type="hidden" size="7" />
+
+                        <label for="hidden">Size</label>
+                        <button id="headline_deflater">-</button>&nbsp;
+                        <button id="headline_inflater">+</button><br/>
+                    </div>
+
+                    <label for="select">Font</label>
+                    <select id="headline_font_selector" class="font_selector"></select>
+                </div>
+
+                <!--status options-->
+                <h3><a href="#">Status Options</a></h3>
+                <div>
+                    <label for="text">Status</label><br />
+                    <input id="status_text" type="text" size="30" value="This is your page." /><br/>
+
+                    <div style="margin: 10px 0;">
+                        <label for="hidden">Color</label>
+                        <input id="status_color_button" type="hidden" size="7" />
+
+                        <label for="hidden">Size</label>
+                        <button id="status_deflater">-</button>&nbsp;
+                        <button id="status_inflater">+</button>
+                    </div>
+
+                    <label for="select">Font</label>
+                    <select id="status_font_selector" class="font_selector"></select>
+                </div>
+
+                <!--story options-->
+                <h3><a href="#">Story Options</a></h3>
+                <div>
+                    <label for="text">Story</label><br />
+                    <textarea id="story_text" class="editor"></textarea>
+
+                    <div style="margin: 10px 0;">
+                        <label for="hidden">Color</label>
+                        <input id="story_color_button" type="hidden" size="7" />
+
+                        <label for="hidden">Size</label>
+                        <button id="story_deflater">-</button>&nbsp;
+                        <button id="story_inflater">+</button>
+                    </div>
+
+                    <label for="select">Font</label>
+                    <select id="story_font_selector" class="font_selector"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabs-2">
+            <div style="margin: 10px 0">
+                <label for="hidden">Background Color</label>
+                <input id="background_color_button" type="hidden" size="7" /><br/>
+            </div>
+
+            <div style="margin: 10px 0">
+			<form action="/upload/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="id_bg_image" style="display: block; margin: 6px 0;">Background Image</label>
+				{{ bg_upload_form.bg_image }}
+				<input type="submit" value="Upload Background Image" />
+			</form>
+            </div>
+
+            {% if page.bg_image %}
+            <div style="margin: 10px 0">
+                <img src="{% thumbnail page.bg_image 120x90 %}" border="0" /><br/>
+            </div>
+            {% endif %}
+
+            {% if page.bg_image %}
+            <div style="margin: 10px 0">
+                <button id="background_toggle"></button>
+            </div>
+            {% endif %}
+        </div>
+
+        <div id="tabs-3">
+            <p>
+            <button id="contact_form_toggle"></button>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div id="contact_form">
+    <form id="contact" action="#" method="post">
+        <div id="form_inputs">
+            {{ contact_agent_form.as_p }}
+        </div>
+        <input type="submit" value="Send Message to Agent" />
+    </form>
+</div>
+{% endblock %}

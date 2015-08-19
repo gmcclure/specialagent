@@ -1,0 +1,23 @@
+
+{% extends 'frontend.html' %}
+{% load url from future %}
+{% block content %}
+<!-- True containers (keep the content inside containers!) -->
+    <div class="container_gamma breadcrumbs">
+        <p><span>&raquo;</span><a href="index.html">Home</a><span>&raquo;</span><a href="#">500 :: Application Error</a></p>
+    </div>
+    <div class="container_omega">
+    
+        <div class="hr"></div>
+        <h1 class="e404 alignleft"><strong>[500]</strong></h1>
+        <h1>Something went wrong.</h1>
+        <h6 class="e404">Uh-oh. Something went wrong. You need do nothing else &mdash; we&apos;ve already been notified.
+            But, depending on the error, you might have to wait until it&apos;s corrected. We apologize if that&apos;s the case.
+            You may try to go back go the homepage, or you might wait and try again later.</h6>
+        
+        <p><a href="/" class="superbutton">Get me back to homepage!</a></p>
+        
+        <div class="clearfix"></div>
+        <div class="hr"></div>
+    </div>
+{% endblock %}

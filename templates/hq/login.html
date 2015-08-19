@@ -1,0 +1,42 @@
+{% extends 'frontend.html' %}
+{% load url from future %}
+{% block content %}
+    <div class="container_gamma breadcrumbs">
+        <p><span>&raquo;</span><a href="index.html">Home</a><span>&raquo;</span><a href="#">Login</a></p>
+    </div>
+    <div class="container_omega">
+        <div class="gs_5">
+        <h2>Login</h2>
+        <p class="information">If you signed using your email addres and a password, log in below with that information.</p>
+            <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <p>
+                {% if form.username.errors %}{{ form.username.errors }}<br />{% endif %}
+                <label for="id_username">Email Address</label><br />
+                {{ form.username }}
+            </p>
+            <p>
+                {% if form.password.errors %}{{ form.password.errors }} <br />{% endif %}
+                {{ form.password.label_tag }}<br />
+                {{ form.password }}
+            </p>
+
+            <input type="submit" name="submit" id="submit" value="Login" class="superbutton ocean" />
+            <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+        <div style="text-align: center" class="gs_1"><p style="font-size: 24px; font-style: italic; margin-top: 88px">or</p></div>
+        <div class="gs_6 omega">
+        <h2>Just Be Social</h2>
+        <p class="information">If you signed up by using Google, Facebook, Twitter, or LinkedIn, then simply click the appropriate icon and sign in with the same service again.</p>
+        <p>
+            <a href="/login/google-oauth/"><img alt="Google (GMail, Google+, etc.)" src="/_/images/frontend/icons/google.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/facebook/"><img alt="Facebook" src="/_/images/frontend/icons/facebook.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/twitter/"><img alt="Twitter" src="/_/images/frontend/icons/twitter.png" width="64" height="64" border="0" /></a>&nbsp;
+            <a href="/login/linkedin/"><img alt="LinkedIn" src="/_/images/frontend/icons/linkedin.png" width="64" height="64" border="0" /></a>
+        </p>
+        </div>
+    </div>
+{% endblock %}

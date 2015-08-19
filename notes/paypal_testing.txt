@@ -1,0 +1,32 @@
+PayPal Testing
+
+In order to test PayPal, you need to do the following.
+
+1. Get the router's external IP and the dev machine's DHCP lease.
+   - On a Mac, get the IP with: ipconfig getifaddr en1
+
+2. On the router, DMZ the test machine.
+
+3. Make sure that local_settings.py reflects the appropriate SITE_DOMAIN.
+   - This will be the router external IP plus the dev port number.
+
+4. (Re)start the dev server with the command:
+   - python manage.py runserver 0.0.0.0:8000
+
+5. Run PayPal tests by loading dev site via SITE_DOMAIN:8000.
+
+PayPal Standard IPN Button Examples
+
+Subscribe Button:
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="XF7ZL82VBLMXQ">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+Unsubscribe Button:
+<A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=YCYPPZCT7WJH4">
+<IMG SRC="https://www.paypalobjects.com/en_US/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
+</A>
+
